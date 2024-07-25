@@ -25,22 +25,18 @@ Neste desafio, foi criada a modelagem e diagramação UML do componente iPhone, 
 
 ```mermaid
 classDiagram
-    class ReprodutorMusical {
-        +tocar()
-        +pausar()
-        +selecionarMusica(String musica)
-    }
+    ReprodutorMusical : tocar()
+    ReprodutorMusical : pausar()
+    ReprodutorMusical : selecionarMusica(String musica)
 
-    class AparelhoTelefonico {
-        +ligar(String numero)
-        +atender()
-        +iniciarCorreioVoz()
-    }
+    AparelhoTelefonico : ligar(String numero)
+    AparelhoTelefonico : atender()
+    AparelhoTelefonico : iniciarCorreioVoz()
 
-    class NavegadorNaInternet {
-        +exibirPagina(String url)
-        +adicionarNovaAba()
-        +atualizarPagina()
-    }
+    NavegadorNaInternet : exibirPagina(String url)
+    NavegadorNaInternet : adicionarNovaAba()
+    NavegadorNaInternet : atualizarPagina()
 
-    class iPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorNaInternet
+    iPhone ..|> ReprodutorMusical
+    iPhone ..|> AparelhoTelefonico
+    iPhone ..|> NavegadorNaInternet
